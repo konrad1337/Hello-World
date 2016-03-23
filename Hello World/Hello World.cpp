@@ -1423,22 +1423,54 @@ return 0;
 using namespace std;
 
 
-void loop(Optionen kenny);
-
-
 struct Optionen
 {
-	int option1;
+	int option1; //Versuche
+	int option2; // min
+	int option3; // max
 };
 
 
-void Optiones()
+void loop(Optionen kenny);
+
+
+Optionen Optiones()
 {
+	system("CLS");
+	cout << " -= OPTIONEN =- " << endl;
+	cout << "" << endl;
+	cout << "" << endl;
+	cout << "1. Versuche : " << endl;
 	int aaa;
 	cin >> aaa;
+	cout << "" << endl;
 
-	Optionen eins = { aaa };
+	cout << "2. Minimum : " << endl;
+	int bbb;
+	cin >> bbb;
+	cout << "" << endl;
 
+	cout << "3. Maximum : " << endl;
+	int ccc;
+	cin >> ccc;
+	cout << "" << endl;
+
+
+
+	system("CLS");
+
+	Optionen eins = { aaa, bbb, ccc };
+
+	return eins;
+}
+
+Optionen standartOptiones()
+{
+	int aaa = 10;
+	int bbb = 1;
+	int ccc = 100;
+	Optionen eins = { aaa, bbb, ccc };
+	return eins;
 }
 
 
@@ -1454,10 +1486,30 @@ void start()
 	cout << "------------------------------------------------" << endl;
 	cout << " " << endl;
 	cout << "------------------------------------------------" << endl;
-	cout << "|       Finde die Zahl zwischen 0 und 100      |" << endl;
+	cout << "|               Enter 1 for Start              |" << endl;
 	cout << "------------------------------------------------" << endl;
+	cout << " " << endl;
+	cout << "------------------------------------------------" << endl;
+	cout << "|              Enter 2 for Options             |" << endl;
+	cout << "------------------------------------------------" << endl;
+	cout << " " << endl;
+	
+	int a = 0;
+	cin >> a;
+	Optionen opt;
 
-	loop(Optionen kenny);
+	if (a == 2)
+	{		
+		opt = Optiones();
+		loop(opt);
+	}
+
+	else
+	{
+		Optionen opt2;
+		opt2 = standartOptiones();
+		loop(opt2);
+	}
 }
 
 
@@ -1505,13 +1557,12 @@ void again()
 }
 
 
-
 int input()
 {
 	cout << " " << endl;
-	cout << "Gib deine Zahl " << endl;
+	cout << "Sei die Zahl : " << endl;
 	int y;
-	cin >> y;
+	std::cin >> y;
 	return y;
 }
 
@@ -1520,14 +1571,19 @@ void loop(Optionen kenny)
 {
 	random_device rd;
 	mt19937 gen(rd());
-	uniform_int_distribution<> dist(1, 100);
+	uniform_int_distribution<> dist(kenny.option2, kenny.option3);
 
 	int x = dist(gen);
 	cout << "DEBUG " << x << endl;
 
+	cout << " " << endl;
+	cout << "Du hast " << kenny.option1 << " Versuche um die Zahl zwischen " << kenny.option2 << " und " << kenny.option3 << " zu finden !" << endl;
+	cout << " " << endl;
+	cout << " " << endl;
 
 	for (int count = 1; count < 100; ++count)
 	{
+		
 		int z = input();
 
 		if (count >= kenny.option1)
@@ -1587,9 +1643,7 @@ void loop(Optionen kenny)
 
 int main()
 {
-
 start();
-
 return 0;
 }
 
