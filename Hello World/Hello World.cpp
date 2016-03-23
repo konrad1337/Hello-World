@@ -1417,7 +1417,7 @@ return 0;
 
 */
 
-
+#define DEBUG_MODE 0;
 #include <random>
 
 using namespace std;
@@ -1498,18 +1498,12 @@ void start()
 	cin >> a;
 	Optionen opt;
 
-	if (a == 2)
-	{		
+	if (a == 2)	
 		opt = Optiones();
-		loop(opt);
-	}
-
 	else
-	{
-		Optionen opt2;
-		opt2 = standartOptiones();
-		loop(opt2);
-	}
+		opt = standartOptiones();
+
+	loop(opt);
 }
 
 
@@ -1574,8 +1568,10 @@ void loop(Optionen kenny)
 	uniform_int_distribution<> dist(kenny.option2, kenny.option3);
 
 	int x = dist(gen);
-	cout << "DEBUG " << x << endl;
 
+#if DEBUG_MODE
+	cout << "DEBUG " << x << endl;
+#endif
 	cout << " " << endl;
 	cout << "Du hast " << kenny.option1 << " Versuche um die Zahl zwischen " << kenny.option2 << " und " << kenny.option3 << " zu finden !" << endl;
 	cout << " " << endl;
