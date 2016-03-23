@@ -17,7 +17,7 @@ int main()
 	std::cout << "Hello world!" << std::endl;
 	return 0;
 }
-Bla
+
 
 int main()
 {
@@ -1581,7 +1581,7 @@ void loop(Optionen kenny)
 	cout << " " << endl;
 	cout << " " << endl;
 
-	for (int count = 1; count < 100; ++count)
+	for (int count = 1; count < kenny.option1++; ++count)
 	{
 		
 		int z = input();
