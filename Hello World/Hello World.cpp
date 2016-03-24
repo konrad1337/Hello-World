@@ -1415,7 +1415,7 @@ return 0;
 }
 
 
-*/
+
 
 #define DEBUG_MODE 0;
 #include <random>
@@ -1577,12 +1577,12 @@ void loop(Optionen kenny)
 	cout << " " << endl;
 	cout << " " << endl;
 
-	for (int count = 1; count < kenny.option1++; ++count)
+	for (int count = 1; count <= kenny.option1; count++)
 	{
 		
 		int z = input();
 
-		if (count >= kenny.option1)
+		if (count > kenny.option1)
 		{
 			system("CLS");
 			cout << " " << endl;
@@ -1639,13 +1639,14 @@ void loop(Optionen kenny)
 
 int main()
 {
+system("color 9F");
 start();
 return 0;
 }
 
 
 
-/*
+
 // 6.1
 
 
@@ -1662,8 +1663,8 @@ int main()
 	return 0;
 }
 
-// 6.2
 
+// 6.2
 
 int main()
 {
@@ -1676,8 +1677,7 @@ int main()
 }
 
 
-// // 6.2 QIUZ
-
+// 6.2 QIUZ
 
 int main()
 {
@@ -1690,3 +1690,35 @@ int main()
 }
 
 */
+
+
+namespace aenus
+{
+	enum kenny
+	{
+		chicken,
+		dog,
+		cat,
+		elephant,
+		duck,
+		snake,
+		animalz
+	};
+}
+
+
+int main()
+{
+	int arry[aenus::animalz];
+	arry[aenus::chicken] = 2;
+	arry[aenus::dog] = 4;
+	arry[aenus::cat] = 4;
+	arry[aenus::elephant] = 4;
+	arry[aenus::duck] = 2;
+	arry[aenus::snake] = 0;
+
+
+	cout << aenus::chicken << endl;
+
+	return 0;
+}
