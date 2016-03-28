@@ -1689,7 +1689,6 @@ int main()
 	return 0;
 }
 
-*/
 
 
 namespace aenus
@@ -1709,16 +1708,65 @@ namespace aenus
 
 int main()
 {
-	int arry[aenus::animalz];
-	arry[aenus::chicken] = 2;
-	arry[aenus::dog] = 4;
-	arry[aenus::cat] = 4;
-	arry[aenus::elephant] = 4;
-	arry[aenus::duck] = 2;
-	arry[aenus::snake] = 0;
+	int arry[aenus::animalz] = { 2, 4, 4, 4, 2, 0 };
+
+	cout << arry[aenus::elephant] << endl;
+
+	return 0;
+}
 
 
-	cout << aenus::chicken << endl;
+// 6.3
+
+int main()
+{
+	using namespace std;
+	const int arrayLength(9);
+	int array[arrayLength] = { 4, 6, 7, 3, 8, 2, 1, 9, 5 };
+	for (int count = 0; count < arrayLength; ++count)
+	cout << array[count] << " " << endl;
+
+	cout << " " << endl;
+	cout << array[0] << endl;
+
+	return 0;
+}
+*/
+
+
+
+using namespace std;
+
+int EINGABE()
+{
+	int x = 0;
+	cin >> x;
+
+
+	return x;
+}
+
+
+
+int main()
+{
+
+int y;
+y = EINGABE();
+cout << " " << endl;
+
+
+const int arrayLength(9);
+int array[arrayLength] = { 4, 6, 7, 3, 8, 2, 1, 9, 5 };
+for (signed int count = 0; count <= arrayLength; ++count)
+
+	if (array[count] = y)
+	{
+		cout << array[y] << endl;
+		cout << " " << endl;
+		cout << array[0] << endl;
+		break;
+	}
 
 	return 0;
 }
